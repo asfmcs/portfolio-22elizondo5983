@@ -1,0 +1,59 @@
+body{
+  background-image: url(https://materdeiradio.com/wp-content/uploads/2017/10/003-wood-melamine-subttle-pattern-background-pat-1.jpg);
+  text-align: center;
+  margin:1in
+}
+
+h1{
+  font-size: 60px;
+}
+
+h2{
+  font-size: 50px;
+  color: whitesmoke;
+}
+
+h3{
+  font-size: 40px;
+  color: whitesmoke;
+}
+
+ol{
+  font-size: 30px;
+  background-color:orange;
+}
+
+.red{
+  background-color:orange;
+  color:rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+.font{
+  font-size:30px;
+}
+
+#Nikkori{
+  color: rgb(35, 78, 252);
+}
+
+#Tacos{
+  color:rgb(104, 0, 104);
+}
+
+#elgranpastor{
+  color:rgb(0, 100, 0);
+}
+
+#culture{
+  background-color:black;
+  color:whitesmoke;
+  font-size: 20px;
+  text-align: left;
+}
+
+.solid {
+  border-style: solid;
+  border-width: 10px;
+  border-color: rgb(155, 96, 41);
+  }
