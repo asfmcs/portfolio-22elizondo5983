@@ -1,0 +1,313 @@
+<html>
+<head>
+<title>Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    //Maze Function
+function drawMaze(w, h){
+    var rect = new Rectangle(w, h);
+    rect.setPosition(0, 0);
+    rect.setColor(Color.black);
+    add(rect);
+}
+
+function drawMaze2(x1, y1, x2, y2, color, width){
+    var line = new Line(x1, y1, x2, y2);
+    line.setColor(color);
+    line.setLineWidth(width);
+    add(line);
+    
+}
+
+//DrawPacman
+function drawPacman(x, y){
+    var arc = new Arc(30, 40, 330, 0);
+    arc.setPosition(x, y);
+    arc.setColor(Color.yellow);
+    add(arc);
+}
+
+//Draw Pacman + Eye
+function drawCircles(radius, color, x, y){
+    var cir = new Circle(radius);
+    cir.setColor(color);
+    cir.setPosition(x, y);
+    add(cir);
+}
+
+//Start Function
+function start(){
+    
+   //Draw Maze
+   //Background
+    drawMaze(getWidth(), getHeight());
+    
+    
+   //The Thingy in the center
+    drawMaze2(getWidth() / 2 + 30, getHeight() / 2 + 170, getWidth() / 2 + 30, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 25, getHeight() / 2 + 165, getWidth() / 2 + 25, 360, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 - 30, getHeight() / 2 + 170, getWidth() / 2 - 30, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 25, getHeight() / 2 + 165, getWidth() / 2 - 25, 360, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 - 30, getHeight() / 2 + 170, getWidth() / 2 + 30, getHeight() / 2 + 170, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 25, getHeight() / 2 + 165, getWidth() / 2 + 25, getHeight() / 2 + 165, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 - 90, 365, getWidth() / 2 - 30, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, 360, getWidth() / 2 - 25, 360, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 + 90, 365, getWidth() / 2 + 30, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 360, getWidth() / 2 + 25, 360, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 + 90, 365, getWidth() / 2 + 90, 305, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 360, getWidth() / 2 + 85, 310, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 - 90, 365, getWidth() / 2 - 90, 305, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, 360, getWidth() / 2 - 85, 310, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 + 90, 305, getWidth() / 2 - 90, 305, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 310, getWidth() / 2 - 85, 310, Color.blue, 2);
+
+
+   //Ghost House
+    drawMaze2(getWidth() / 2 + 90, 245, getWidth() / 2 - 90, 245, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 240, getWidth() / 2 - 85, 240, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 + 90, 245, getWidth() / 2 + 90, 175, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 240, getWidth() / 2 + 85, 180, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 - 90, 245, getWidth() / 2 - 90, 175, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, 240, getWidth() / 2 - 85, 180, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 + 90, 175, getWidth() / 2 + 30, 175, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, 180, getWidth() / 2 + 30, 180, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 - 30, 175, getWidth() / 2 - 90, 175, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 30, 180, getWidth() / 2 - 85, 180, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 - 30, 175, getWidth() / 2 + 30, 175, Color.white, 2);
+    drawMaze2(getWidth() / 2 - 30, 180, getWidth() / 2 + 30, 180, Color.white, 2);
+    
+    
+    //Bottom Line
+    drawMaze2(0, 480, getWidth(), 480, Color.blue, 2);
+    drawMaze2(0, 475, getWidth() / 2 - 115, 475, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 90, 475, getWidth() / 2 + 85, 475, Color.blue, 2);
+    drawMaze2(getWidth(), 475, getWidth() / 2 + 115, 475, Color.blue, 2);
+    
+    
+    //Column left
+    drawMaze2(getWidth() / 2 - 90, 475, getWidth() / 2 - 90, getHeight() / 2 + 190, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 - 115, 475, getWidth() / 2 - 115, getHeight() / 2 + 190, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 - 115, getHeight() / 2 + 190, getWidth() / 2 - 90, getHeight() / 2 + 190, Color.blue, 2);
+
+
+    //Column Right
+    drawMaze2(getWidth() / 2 + 85, 475, getWidth() / 2 + 85, getHeight() / 2 + 190, Color.blue, 2);
+    
+    drawMaze2(getWidth() / 2 + 115, 475, getWidth() / 2 + 115, getHeight() / 2 + 190, Color.blue, 2);
+
+    drawMaze2(getWidth() / 2 + 85, getHeight() / 2 + 190, getWidth() / 2 + 115, getHeight() / 2 + 190, Color.blue, 2);
+    
+    
+    //Top Block
+    drawMaze2(getWidth() / 2 - 90, getHeight() / 2 - 120, getWidth() / 2 + 90, getHeight() / 2 - 120, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, getHeight() / 2 - 125, getWidth() / 2 + 85, getHeight() / 2 - 125, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 90, getHeight() / 2 - 120, getWidth() / 2 + 90, getHeight() / 2 - 190, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 85, getHeight() / 2 - 125, getWidth() / 2 + 85, getHeight() / 2 - 185, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 90, getHeight() / 2 - 120, getWidth() / 2 - 90, getHeight() / 2 - 190, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, getHeight() / 2 - 125, getWidth() / 2 - 85, getHeight() / 2 - 185, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 90, getHeight() / 2 - 190, getWidth() / 2 + 90, getHeight() / 2 - 190, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 85, getHeight() / 2 - 185, getWidth() / 2 + 85, getHeight() / 2 - 185, Color.blue, 2);
+
+    //Wall Right
+    drawMaze2(getWidth() / 2 + 150, 305, getWidth() / 2 + 150, getHeight() / 2 -190, Color.green, 2);
+    drawMaze2(getWidth() / 2 + 155, 300, getWidth() / 2 + 155, getHeight() / 2 -185, Color.green, 2);
+    drawMaze2(getWidth() / 2 + 155, 300, getWidth() / 2 + 200, 300, Color.green, 2);
+    drawMaze2(getWidth() / 2 + 155, getHeight() / 2 -185, getWidth() / 2 + 200, getHeight() / 2 -185, Color.green, 2);
+    drawMaze2(getWidth() / 2 + 150, 305, getWidth() / 2 + 200, 305, Color.green, 2);
+    drawMaze2(getWidth() / 2 + 150, getHeight() / 2 -190, getWidth() / 2 + 200, getHeight() / 2 -190, Color.green, 2);
+
+    //Wall Left
+    drawMaze2(getWidth() / 2 - 150, 305, getWidth() / 2 - 150, getHeight() / 2 -190, Color.orange, 2);
+    drawMaze2(getWidth() / 2 - 155, 300, getWidth() / 2 - 155, getHeight() / 2 -185, Color.orange, 2);
+    drawMaze2(getWidth() / 2 - 155, 300, getWidth() / 2 - 200, 300, Color.orange, 2);
+    drawMaze2(getWidth() / 2 - 155, getHeight() / 2 -185, getWidth() / 2 - 200, getHeight() / 2 -185, Color.orange, 2);
+    drawMaze2(getWidth() / 2 - 150, 305, getWidth() / 2 - 200, 305, Color.orange, 2);
+    drawMaze2(getWidth() / 2 - 150, getHeight() / 2 -190, getWidth() / 2 - 200, getHeight() / 2 -190, Color.orange, 2);
+    
+    
+    //Sub-Wall Left
+    drawMaze2(getWidth() / 2 - 150, 365, getWidth() / 2 - 200, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 155, 370, getWidth() / 2 - 200, 370, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 150, getHeight() - 67, getWidth() / 2 - 200, getHeight() - 67, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 155, getHeight() - 72, getWidth() / 2 - 200, getHeight() - 72, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 150, 365, getWidth() / 2 - 150, getHeight() - 67, Color.blue, 2);
+    drawMaze2(getWidth() / 2 - 155, 370, getWidth() / 2 - 155, getHeight() - 72, Color.blue, 2);
+    
+
+    //Sub-Wall Right
+    drawMaze2(getWidth() / 2 + 150, 365, getWidth() / 2 + 200, 365, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 155, 370, getWidth() / 2 + 200, 370, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 150, getHeight() - 67, getWidth() / 2 + 200, getHeight() - 67, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 155, getHeight() - 72, getWidth() / 2 + 200, getHeight() - 72, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 150, 365, getWidth() / 2 + 150, getHeight() - 67, Color.blue, 2);
+    drawMaze2(getWidth() / 2 + 155, 370, getWidth() / 2 + 155, getHeight() - 72, Color.blue, 2);
+    
+
+    //Draw Pac-Man
+    drawPacman(getWidth() / 2, getHeight() / 2 + 87 + 115);
+    drawCircles(5, Color.black, getWidth() / 2 + 5, getHeight() / 2 + 72 + 115);
+    
+    
+    //Draw Ghost
+    var pink = new Color(255,105,180);
+    var blue = new Color(135, 206, 250);
+    var centerX = getWidth() / 2;
+    var centerY = getHeight() / 2 - 103;
+    drawGhost(centerX, centerY, Color.red);
+    drawGhost(centerX, centerY + 65, pink);
+    drawGhost(centerX + 50, centerY + 65, Color.yellow);
+    drawGhost(centerX - 50, centerY + 65, blue);
+    
+    
+    //Draw Points
+    drawPoints(5, 15, 25, Color.yellow);
+    drawPoints(5, 45, 25, Color.yellow);
+    drawPoints(5, 75, 25, Color.yellow);
+    drawPoints(5, 105, 25, Color.yellow);
+    drawPoints(5, 135, 25, Color.yellow);
+    drawPoints(5, 165, 25, Color.yellow);
+    drawPoints(5, 195, 25, Color.yellow);
+    drawPoints(5, 225, 25, Color.yellow);
+    drawPoints(5, 255, 25, Color.yellow);
+    drawPoints(5, 285, 25, Color.yellow);
+    drawPoints(5, 315, 25, Color.yellow);
+    drawPoints(5, 345, 25, Color.yellow);
+    drawPoints(5, 375, 25, Color.yellow);
+    drawPoints(5, 65, 455, Color.yellow);
+    drawPoints(5, 35, 455, Color.yellow);
+    drawPoints(5, 5, 455, Color.yellow);
+    drawPoints(5, 65, 425, Color.yellow);
+    drawPoints(5, 65, 395, Color.yellow);
+    drawPoints(5, 65, 365, Color.yellow);
+    drawPoints(5, 65, 335, Color.yellow);
+    drawPoints(5, 35, 335, Color.yellow);
+    drawPoints(5, 5, 335, Color.yellow);
+    drawPoints(5, 335, 455, Color.yellow);
+    drawPoints(5, 365, 455, Color.yellow);
+    drawPoints(5, 395, 455, Color.yellow);
+    drawPoints(5, 335, 425, Color.yellow);
+    drawPoints(5, 335, 395, Color.yellow);
+    drawPoints(5, 335, 365, Color.yellow);
+    drawPoints(5, 335, 335, Color.yellow);
+    drawPoints(5, 365, 335, Color.yellow);
+    drawPoints(5, 395, 335, Color.yellow);
+
+
+
+}
+
+//Points Function
+function drawPoints(radius, posX, posY, color){
+    var circle = new Circle(radius);
+    circle.setPosition(posX, posY);
+    circle.setColor(color);
+    add(circle);
+}
+
+//Ghost Function
+function drawGhost(centerX, centerY, color){
+    var rect = new Rectangle(30, 30);
+    rect.setPosition(centerX - 15, centerY);
+    rect.setColor(color);
+    add(rect);
+    
+    var circle1 = new Circle(15);
+    circle1.setColor(color);
+    circle1.setPosition(centerX, centerY);
+    add(circle1);
+    
+    var circle2 = new Circle(5);
+    circle2.setColor(color);
+    circle2.setPosition(centerX - 10, centerY + 30);
+    add(circle2);
+    
+    var circle3 = new Circle(5);
+    circle3.setColor(color);
+    circle3.setPosition(centerX, centerY + 30);
+    add(circle3);
+    
+    var circle4 = new Circle(5);
+    circle4.setColor(color);
+    circle4.setPosition(centerX + 10, centerY + 30);
+    add(circle4);
+    
+    var circle5 = new Circle(3);
+    circle5.setColor(Color.white);
+    circle5.setPosition(centerX - 8, centerY);
+    add(circle5);
+    
+    var circle6 = new Circle(3);
+    circle6.setColor(Color.white);
+    circle6.setPosition(centerX + 8, centerY);
+    add(circle6);
+    
+    var circle7 = new Circle(2);
+    circle7.setColor(Color.blue);
+    circle7.setPosition(centerX - 5, centerY);
+    add(circle7);
+    
+    var circle8 = new Circle(2);
+    circle8.setColor(Color.blue);
+    circle8.setPosition(centerX + 11, centerY);
+    add(circle8);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

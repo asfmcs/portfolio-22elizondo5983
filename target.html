@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Target</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Target</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    // This program draws a target that follows the mouse
+var L1;
+var L2;
+
+function start(){
+    L1 = new Line(0, getHeight() / 2, getWidth(), getHeight() / 2);
+    add(L1);
+    
+    L2 = new Line(getWidth() / 2, 0, getWidth() / 2, getHeight());
+	add(L2);
+    
+    mouseMoveMethod(moveLines);
+}
+
+function moveLines(e){
+    var H = e.getY();
+    var W = e.getX();
+    L1.setPosition(0, H);
+    L1.setEndpoint(getWidth(), H);
+    
+    L2.setPosition(W, 0);
+    L2.setEndpoint(W, getHeight());
+    
+    mouseClickMethod(click);
+}
+
+function click(e){
+    var H = e.getY();
+    var W = e.getX();
+    var C = new Circle(15);
+    C.setColor(Color.red);
+    C.setPosition(W, H);
+    add(C);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

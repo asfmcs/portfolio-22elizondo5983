@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Ghosts</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Ghosts</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    //x location of the ghost, the center y location of the ghost and the color of the ghost
+function drawGhost(centerX, centerY, color){
+    var rect = new Rectangle(70, 70);
+    rect.setPosition(centerX - 35, centerY);
+    rect.setColor(color);
+    add(rect);
+    
+    var circle1 = new Circle(35);
+    circle1.setColor(color);
+    circle1.setPosition(centerX, centerY);
+    add(circle1);
+    
+    var circle2 = new Circle(15);
+    circle2.setColor(color);
+    circle2.setPosition(centerX - 20, centerY + 74);
+    add(circle2);
+    
+    var circle3 = new Circle(15);
+    circle3.setColor(color);
+    circle3.setPosition(centerX, centerY + 74);
+    add(circle3);
+    
+    var circle4 = new Circle(15);
+    circle4.setColor(color);
+    circle4.setPosition(centerX + 20, centerY + 74);
+    add(circle4);
+    
+    var circle5 = new Circle(10);
+    circle5.setColor(Color.white);
+    circle5.setPosition(centerX - 12, centerY);
+    add(circle5);
+    
+    var circle6 = new Circle(10);
+    circle6.setColor(Color.white);
+    circle6.setPosition(centerX + 12, centerY);
+    add(circle6);
+    
+    var circle7 = new Circle(5);
+    circle7.setColor(Color.blue);
+    circle7.setPosition(centerX - 6.5, centerY);
+    add(circle7);
+    
+    var circle8 = new Circle(5);
+    circle8.setColor(Color.blue);
+    circle8.setPosition(centerX + 16.5, centerY);
+    add(circle8);
+}
+
+
+function start(){
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(centerX, centerY, Color.red);
+    drawGhost(100,100, Color.green);
+    drawGhost(300, 200, Color.black);
+    drawGhost(40, 300, Color.orange);
+    drawGhost(300, 50, Color.yellow);
+
+
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
