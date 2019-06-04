@@ -1,264 +1,668 @@
-/*Background color*/
+/*General CSS BEGIN*/
 body{
-  background-color: lightgrey;
+  background-color: white;
 }
 
-/*Header*/
-#Header{
-  background-color: black;
+h1{
+  font-size: 100px;
+}
+
+h2{
+  font-size: 80px;
+}
+
+h3{
+  font-size: 60px;
+}
+
+h4{
+  font-size: 50px;
+}
+
+h5{
+  font-size: 40px;
+}
+
+h6{
+  font-size: 30px;
+}
+
+p{
+  font-size: 20px;
+  text-align:justify;
+  text-indent: 40px;
   color: white;
-  margin: 0;
-  padding: 0;
-  width: 100%;
 }
 
-#header-table{
+table{
   background-color: black;
+}
+
+.center{
+  text-align: center;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover { 
+  background-color: rgb(255, 0, 0);
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.white{
+  color: white;
+}
+/*General CSS FINISH*/
+
+/*Header CSS Begin*/
+th{
+  color: white;
+}
+
+#Header-Block{
   width: 100%;
   position: fixed;
     top:0%;
     right:0%;
     left: 0%;
     bottom: 100%;
-  z-index: 20;
+  z-index: 50;
 }
 
-.header-links:hover { 
-  background-color: white;
-}
-
-
-.header-links{
-  font-size: 40px;
-  text-align: center;
-  padding: 30px;
-}
-
-a{
-  color: grey;
-  text-decoration: none;
-}
-
-/*Basic Heading Format*/
-h1{
-  text-align: center;
-  font-size: 50px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-h2{
-  color: white;
-  text-align: center;
-  font-size: 40px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-h3{
-  text-align: center;
+#Home{
   font-size: 30px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-h4{
-  text-align: center;
-  font-size: 20px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-/*Intro to CS*/
-#timeline{
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-#rgb-project{
-  margin-top: 30px;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-
-/*Web Design*/
-#websites{
-  font-size: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.img{
-  width:80%;
-  height: 250px;
-}
-
-/*Div's*/
-
-/*Webpage Title*/
-#div-1{
-  background-color: lightgrey;
-  width: 100%;
-  position: absolute;
-    top: 10%;
+  width:16%;
+    top:0%;
     right: 0%;
     left: 0%;
-    bottom: 25%;
-  z-index: 1;
+    bottom: 0%;
 }
 
-/*Heading 1 (Intro to Computer Science)*/
-#div-2{
-  border: 3px solid black;
-  background-color: rgb(104, 104, 104);
+#Overview{
+  font-size: 30px;
+  width:19%;
+    top:0%;
+    right: 0%;
+    left: 16%;
+    bottom: 0%;
+}
+
+#TKR{
+  font-size: 30px;
+  width:16%;
+    top:0%;
+    right: 0%;
+    left: 32%;
+    bottom: 0%;
+}
+
+#IP{
+  font-size: 30px;
+  width:16%;
+    top:0%;
+    right: 0%;
+    left: 48%;
+    bottom: 0%;
+}
+
+#Poetry{
+  font-size: 30px;
+  width:19%;
+    top:0%;
+    right: 0%;
+    left: 64%;
+    bottom: 0%;
+}
+
+#R-S{
+  font-size: 30px;
+  width:19%;
+    top:0%;
+    right: 0%;
+    left: 80%;
+    bottom: 0%;
+}
+/*Header CSS FINISH*/
+
+/*Introduction CSS*/
+#div-1{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 35%;
+  position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  z-index:3
+}
+
+#div-1-2{
+  width: 50%;
+  position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 50%;
+    bottom: 0%;
+  z-index: 3;
+  padding-left: 2%;
+}
+
+
+#div-1-4{
+  width: 50%;
+  position: absolute;
+    top: 0%;
+    left: 50%;
+    right: 0%;
+    bottom: 0%;
+  z-index:3
+}
+
+#div-1-6{
+  width: 40%;
+  position: absolute;
+    top: 30%;
+    left: 60%;
+    right: 0%;
+    bottom: 0%;
+  z-index:3
+}
+
+#div-1-8{
   width: 100%;
   position: absolute;
     top: 50%;
-    right: 0%;
     left: 0%;
-    bottom: 35%;
+    right: 0%;
+    bottom: 0%;
+  z-index:3
+}
+
+#div-2{
+  width: 100%;
+  position: absolute;
+    top: 28%;
+    left: 0%;
+    right: 0%;
+    bottom: 53%;
+  background-color: lightgray;
+  z-index: 2;
+
+}
+
+#div-3{
+  width: 96%;
+  position: absolute;
+    top: 45%;
+    left: 0%;
+    right: 0%;
+    bottom: 30%;
+  padding-left: 2%;
+  padding-right: 2%;
+  z-index: 5;
+  background-color: rgb(0, 0, 0);
+}
+
+#div-4{
+  width: 100;
+  position: absolute;
+    top: 63%;
+    left: 0%;
+    right: 0%;
+    bottom: 21%;
+  background-color: lightgray;
+  z-index: 2;
+}
+
+#div-5{
+  width: 100%;
+  position: absolute;
+    top: 72%;
+    left: 0%;
+    right: 0%;
+    bottom: 11%;
+  background-color: rgb(0, 0, 0);
+}
+
+#white{
+  color: rgb(255, 255, 255);
+}
+
+#div-5-5{
+  width: 96%;
+  position: absolute;
+    top: 87%;
+    left: 0%;
+    right: 0%;
+    bottom: -11%;
+  background-color: rgb(0, 0, 0);
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#div-6{
+  width: 50%;
+  position: absolute;
+    top: 115%;
+    left: 25%;
+    right: 0%;
+    bottom: 0%;
+  background-color: rgb(255, 255, 255);
   z-index: 3;
 }
 
-/*Heading 1 - Activity 1 (Timeline)*/
-#div-3{
-  background-color: lightgrey;
+#div-7{
+  width: 50%;
+  position: absolute;
+    top: 115%;
+    left: 50%;
+    right: 0%;
+    bottom: 0%;
+  background-color: rgb(255, 255, 255);
+  z-index: 3;
+}
+
+#blank{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+    top: 105;
+    left: 0%;
+    right: 0%;
+    bottom: -78%;
+  z-index: 2;
+}
+
+#div-8{
   width: 100%;
   position: absolute;
-    top: 65%;
-    right: 0%;
+    top: 170%;
     left: 0%;
-    bottom: -45%;
+    right: 0%;
+    bottom: -86%;
+  background-color: lightgray;
+  z-index: 1;
+  
+}
+
+#div-9{
+  width: 66%;
+  position: absolute;
+    top: 190%;
+    left: 17%;
+    right: 0%;
+    bottom: 0%;
   z-index: 4;
 }
 
-/*Heading 1 - Activity 2 (Color by Pixel)*/
-#div-4{
-  background-color: white;
-  width: 100%;
-  position: absolute;
-    top: 145%;
-    right: 0%;
-    left: 0%;
-    bottom: -130%;
-  z-index: 5;
-}
-
-/*Heading 2 (Web Design)*/
-#div-5{
-  border: 3px solid black;
-  background-color: rgb(104, 104, 104);
-  width: 100%;
-  position: absolute;
-    top: 230%;
-    right: 0%;
-    left: 0%;
-    bottom: -145%;
-  z-index: 6;
-}
-
-/*Heading 2 - Activities 1-4 (Webpages)*/
-#div-6{
-  background-color: lightgrey;
-  width: 100%;
-  position: absolute;
-    top: 255%;
-    right: 0%;
-    left: 0%;
-    bottom: -195%;
-  z-index: 7;
-}
-
-/*Heading 3*/
-#div-7{
-  border: 3px solid black;
-  background-color: rgb(104, 104, 104);
-  width: 100%;
-  position: absolute;
-    top: 295%;
-    right: 0%;
-    left: 0%;
-    bottom: -210%;
-  z-index: 6;
-  }
-
-  #div-9{
-    width: 33%;
-    position: absolute;
-      top: 310%;
-      right: 0%;
-      left: 5%;
-      bottom: -225%;
-    z-index: 6;
-  }
-
-  #div-10{
-    width: 33%;
-    position: absolute;
-      top: 310%;
-      right: 0%;
-      left: 38%;
-      bottom: -225%;
-    z-index: 6;
-  }
-
-  #div-11{
-    width: 33%;
-    position: absolute;
-      top: 310%;
-      right: 0%;
-      left: 62%;
-      bottom: -255%;
-    z-index: 6;
-  }
-
-  /*Heading 4*/
-  #div-8{
-  border: 3px solid black;
-  background-color: rgb(104, 104, 104);
-  width: 100%;
-  position: absolute;
-    top: 355%;
-    right: 0%;
-    left: 0%;
-    bottom: -270%;
-  z-index: 6;
-  }
-
-  #div-12{
-  width: 50%;
-  position: absolute;
-    top: 370%;
-    right: 0%;
-    left: 15%;
-    bottom: -285%;
-  z-index: 6;
-  }
-
-  #div-13{
-  width: 50%;
-  position: absolute;
-    top: 370%;
-    right: 0%;
-    left: 65%;
-    bottom: -300%;
-  z-index: 6;
-  }
-
-  /*Footer*/
-  #footer{
+#blank-2{
   background-color: black;
-  color: white;
+  position: absolute;
+    top: 186%;
+    left: 0%;
+    right: 0%;
+    bottom: -217%;
+  z-index: 4;
+}
+
+#b2{
+  color: black;
+}
+
+#div-10{
+  width: 76%;
+  position: absolute;
+    top: 270%;
+    left: 12%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 4;
+}
+
+#div-11{
+  width: 48%;
+  position: absolute;
+    top: 270%;
+    left: 52%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 4;
+}
+
+#div-12{
   width: 100%;
   position: absolute;
-    top: 400%;
-    right: 0%;
+    top: 310%;
     left: 0%;
-    bottom: -315%;
-  z-index: 6;
-  }
+    right: 0%;
+    bottom: -227%;
+  background-color: lightgray;
+  z-index: 3;
+}
+
+#div-13{
+  width: 100%;
+  position: absolute;
+    top: 320%;
+    left: 0%;
+    right: 0%;
+    bottom: -250%;
+  background-color: black;
+  
+}
+
+#div-14{
+  width: 96%;
+  position: absolute;
+    top: 335%;
+    left: 0%;
+    right: 0%;
+    bottom: -257%;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: black;
+  z-index: 2;
+}
+
+#div-15{
+  width: 100%;
+  position: absolute;
+    top: 350%;
+    left: 0%;
+    right: 0%;
+    bottom: -265%;
+  z-index: 1;
+  background-color: lightgray;
+}
+
+#div-15-5{
+  width: 66%;
+  position: absolute;
+    top: 365%;
+    left: 17%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 3;
+}
+
+#blank-3{
+  position: absolute;
+    top: 365%;
+    left: 0%;
+    right: 0%;
+    bottom: -334.30%;
+  z-index: 2;
+  background-color: white;
+}
+
+#div-16{
+  width: 100%;
+  position: absolute;
+    top: 428%;
+    left: 0%;
+    right: 0%;
+    bottom: -344%;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#div-16-5{
+  width: 56%;
+  position: absolute;
+    top: 444%;
+    left: 22%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 3;
+}
+
+#blank-4{
+  position: absolute;
+    top: 460%;
+    left: 0%;
+    right: 0%;
+    bottom: -466.3%;
+  z-index: 2;
+  background-color: white;
+}
+
+#div-17{
+  width: 100%;
+  position: absolute;
+    top: 560%;
+    left: 0%;
+    right: 0%;
+    bottom: -475%;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#div-17-5{
+  width: 56%;
+  position: absolute;
+    top: 575%;
+    left: 22%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 3;
+}
+
+#blank-5{
+  position: absolute;
+    top: 620%;
+    left: 0%;
+    right: 0%;
+    bottom: -597.3%;
+  z-index: 2;
+  background-color: white;
+}
+
+#div-18{
+  width: 100%;
+  position: absolute;
+    top: 690%;
+    left: 0%;
+    right: 0%;
+    bottom: -605%;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#div-18-5{
+  width: 56%;
+  position: absolute;
+    top: 705%;
+    left: 22%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 3;
+}
+
+#blank-6{
+  position: absolute;
+    top: 800%;
+    left: 0%;
+    right: 0%;
+    bottom: -727.3%;
+  z-index: 2;
+  background-color: white;
+}
+
+#R1{
+  width: 100%;
+  position: absolute;
+    top: 820%;
+    left: 0%;
+    right: 0%;
+    bottom: -735%;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#R2{
+  width: 66%;
+  position: absolute;
+    top: 835%;
+    left: 0%;
+    right: 0%;
+    bottom: -822%;
+  z-index: 2;
+  padding-left: 17%;
+  padding-right: 17%;
+  padding-top: 5%;
+  background-color: black;
+}
+
+#div-19{
+  width: 100%;
+  position: absolute;
+    top: 917%;
+    left: 0%;
+    right: 0%;
+    bottom: -836%;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#div-20{
+  width: 96%;
+  position: absolute;
+    top: 935%;
+    left: 0%;
+    right: 0%;
+    bottom: -855%;
+  background-color: black;
+  padding-left: 2%;
+  padding-right: 2%;
+  z-index: 2;
+}
+
+#div-21{
+  width: 100%;
+  position: absolute;
+    top: 948%;
+    left: 0%;
+    right: 0%;
+    bottom: -865%;
+  z-index: 1;
+  background-color: lightgray;
+}
+
+#div-21-5{
+  width: 56%;
+  position: absolute;
+    top: 965%;
+    left: 22%;
+    right: 0%;
+    bottom: 0%;
+  z-index: 3;
+}
+
+#blank-7{
+  position: absolute;
+    top: 1000%;
+    left: 0%;
+    right: 0%;
+    bottom: -987.3%;
+  z-index: 2;
+  background-color: white;
+}
+
+#div-22{
+  width: 100%;
+  position: absolute;
+    top: 1080%;
+    left: 0%;
+    right: 0%;
+    bottom: -997%;
+  background-color: lightgray;
+  z-index: 1;
+}
 
 
-  /*Spans*/
-  .black{
-    color:black;
-  }
+
+#div-23{
+  width: 56%;
+  position: absolute;
+    top: 1097%;
+    left: 0%;
+    right: 0%;
+    bottom: -1200%;
+  background-color: black;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-top: 3%;
+  z-index: 2;
+}
+
+#div-24{
+  width: 55%;
+  position: absolute;
+    top: 1230%;
+    left: 0%;
+    right: 0%;
+    bottom: -1200%;
+  z-index: 3;
+  background-color: black;
+  padding-left: 22.5%;
+  padding-right: 22.5%;
+}
+
+#div-25{
+  width: 100%;
+  position: absolute;
+    top: 1294%;
+    left: 0%;
+    right: 0%;
+    bottom: -1212%;
+  background-color: lightgrey;
+  z-index: 1;
+}
+
+#div-26{
+  width: 56%;
+  position: absolute;
+    top: 1312%;
+    left: 0%;
+    right: 0%;
+    bottom: -1212%;
+  z-index: 1;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-top: 3%;
+}
+
+#div-27{
+  width: 56%;
+  position: absolute;
+    top: 1440%;
+    left: 0%;
+    right: 0%;
+    bottom: -1212%;
+  z-index: 1;
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-top: 3%;
+}
+
+#Footer{
+  background-color: black;
+  font-size: 20px;
+  width: 100%;
+  position: absolute;
+    top: 1568%;
+    left: 0%;
+    right: 0%;
+    bottom: -1475%;
+}
+
+.black{
+  color: black;
+}
